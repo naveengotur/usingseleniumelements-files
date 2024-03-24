@@ -1,4 +1,4 @@
-package elementsPrograms;
+package elementsWithSelenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -6,28 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class EditTheData {
+public class EditTheData extends BaseClass {
 
 	public static void main(String[] args) {
-
-		WebDriver driver;
-
-		driver = new FirefoxDriver();
-
-		driver.get("https://demoqa.com/");
-
-		System.out.println(driver.getTitle());
-
-		System.out.println(driver.getCurrentUrl());
-
-		JavascriptExecutor js1 = (JavascriptExecutor) driver;
-		js1.executeScript("window.scrollBy(0,250)", "");
-
-		driver.findElement(By.xpath("(//div[.='Elements'])[2]")).click();
-
-		System.out.println(driver.getTitle());
-
-		System.out.println(driver.getCurrentUrl());
 
 		driver.findElement(By.xpath("//span[.='Web Tables']")).click();
 
@@ -37,7 +18,7 @@ public class EditTheData {
 
 		JavascriptExecutor js2 = (JavascriptExecutor) driver;
 		js2.executeScript("window.scrollBy(0,250)", "");
-		
+
 		driver.findElement(By.id("edit-record-1")).click();
 
 		WebElement newForm = driver.findElement(By.id("registration-form-modal"));
@@ -63,7 +44,6 @@ public class EditTheData {
 		String displayedData = storedData.getText();
 
 		System.out.println(displayedData);
-		
 
 		driver.close();
 
