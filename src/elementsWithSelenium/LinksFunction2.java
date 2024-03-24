@@ -22,11 +22,22 @@ public class LinksFunction2 extends BaseClass {
 
 		System.out.println(driver.getCurrentUrl());
 
+		/*
+		Object browser;
+		browser.getAllWindowHandles().then(function (handles) {
+			browser.driver.switchTo().window(handles[1]);
+			browser.driver.close();
+			browser.driver.switchTo().window(handles[0]);
+			});
+		or 
+		
 		driver.get("https://demoqa.com/links");
 		// Opens a new window and switches to new window
 		driver.switchTo().newWindow(WindowType.TAB);
 		// Opens LambdaTest homepage in the newly opened tab
 		driver.navigate().to("https://demoqa.com/");
+
+*/
 
 		driver.close();
 
