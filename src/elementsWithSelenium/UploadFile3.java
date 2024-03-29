@@ -23,9 +23,11 @@ public class UploadFile3 {
 		String projectpath = System.getProperty("user.dir");
 		driver.findElement(By.xpath("//input[@type='file']")).sendKeys(projectpath+"\\screeshot\\facebook.png");
 
-		Thread.sleep(3000);
+		System.out.println("file is uploaded ");
+		
+		
 
-		driver.close();
+		//driver.close();
 		
 
 	}
