@@ -26,7 +26,7 @@ public class ScreenshotTestNG {
 	@Test
 	public void uploadFile() throws InterruptedException
 	{	
-	driver.get("https://www.facebook.com/");
+	driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 	Thread.sleep(2000);
 	File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 	String screenshotBase64 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BASE64);

@@ -7,7 +7,7 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LinksFunction2 extends BaseClass
+public class LinksFunction2 extends BaseClassTNG
 {
 
 	@Test

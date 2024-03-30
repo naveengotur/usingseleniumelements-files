@@ -8,21 +8,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class TextFunction {
-
-	WebDriver driver;
+public class TextFunction extends BaseClassTNG {
 
 	@Test
 
-	public void TextFunction() {
-
-//		driver = new ChromeDriver();
-
-		driver = new FirefoxDriver();
-
-		driver.manage().window().maximize();
-
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	public void TextFunction() throws InterruptedException {
 
 		driver.get("https://www.facebook.com/");
 
@@ -36,13 +26,11 @@ public class TextFunction {
 
 		driver.findElement(By.xpath("//button[.='Log in']")).click();
 
-		// driver.findElement(By.xpath("//a[.='Create a Page']")).click();
+		Thread.sleep(2000);
 
 		System.out.println(driver.getTitle());
 
 		System.out.println(driver.getCurrentUrl());
-
-		driver.close();
 
 	}
 

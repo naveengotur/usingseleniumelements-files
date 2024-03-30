@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class RadioButtonFunction extends BaseClass {
+public class RadioButtonFunction extends BaseClassTNG {
 
 	@Test
 	public void radioButton() throws InterruptedException {

@@ -5,7 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class ButtonsFunction extends BaseClass {
+public class ButtonsFunction extends MainClass {
 
 	public static void main(String[] args) {
 

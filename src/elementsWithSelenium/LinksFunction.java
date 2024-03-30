@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class LinksFunction extends BaseClass {
+public class LinksFunction extends MainClass {
 
 	public static void main(String[] args) {
 

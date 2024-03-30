@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 
-public class CheckboxFunction extends BaseClass {
+public class CheckboxFunction extends MainClass {
 
 	public static void main(String[] args) {
 

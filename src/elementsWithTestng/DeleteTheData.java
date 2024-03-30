@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class DeleteTheData extends BaseClass {
+public class DeleteTheData extends ElementBaseClassTNG {
 	@Test
 
 	public void deleteTheData() {

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class EnterTheDataAndStore extends BaseClass {
+public class EnterTheDataAndStore extends ElementBaseClassTNG {
 
 	@Test
 

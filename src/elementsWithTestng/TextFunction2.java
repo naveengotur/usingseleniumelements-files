@@ -7,21 +7,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class TextFunction2 extends BaseClass {
+public class TextFunction2 extends ElementBaseClassTNG {
 
 	@Test
 
 	public void textFunction2() throws InterruptedException {
 
-		JavascriptExecutor js2 = (JavascriptExecutor) driver;
-		js2.executeScript("window.scrollBy(0,250)", "");
-
-		driver.findElement(By.xpath("(//div[.='Elements'])[2]")).click();
-
-		System.out.println(driver.getTitle());
-
-		System.out.println(driver.getCurrentUrl());
-
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
 		driver.findElement(By.xpath("//span[.='Text Box']")).click();
 
 		System.out.println(driver.getTitle());
@@ -39,7 +32,7 @@ public class TextFunction2 extends BaseClass {
 		Thread.sleep(2000);
 
 		// for click the "Submit" button scrollbar down
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
 		js.executeScript("window.scrollBy(0,250)", "");
 
 		driver.findElement(By.id("submit")).click();

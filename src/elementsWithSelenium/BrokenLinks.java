@@ -3,7 +3,7 @@ package elementsWithSelenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class BrokenLinks extends BaseClass {
+public class BrokenLinks extends MainClass {
 
 	public static void main(String[] args) {
 

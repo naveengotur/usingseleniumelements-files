@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class EditTheData extends BaseClass {
+public class EditTheData extends ElementBaseClassTNG {
 	@Test
 	public void editTheData() {
 

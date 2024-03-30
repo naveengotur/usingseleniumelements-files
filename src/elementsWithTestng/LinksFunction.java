@@ -1,5 +1,7 @@
 package elementsWithTestng;
 
+import static org.testng.Assert.assertTrue;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -7,12 +9,12 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class LinksFunction extends BaseClass {
+public class LinksFunction extends ElementBaseClassTNG {
 
 	@Test
-	public void linksFunction() {
+	public void linksFunction() throws InterruptedException {
 
-		driver.findElement(By.xpath("//span[.='Buttons']")).click();
+		driver.findElement(By.xpath("//span[.='Links']")).click();
 
 		System.out.println(driver.getTitle());
 
@@ -24,11 +26,24 @@ public class LinksFunction extends BaseClass {
 
 		System.out.println(driver.getCurrentUrl());
 
-		/*
-		 * driver.get("https://demoqa.com/links"); // Opens a new window and switches to
-		 * new window driver.switchTo().newWindow(WindowType.TAB); // Opens LambdaTest
-		 * homepage in the newly opened tab driver.navigate().to("https://demoqa.com/");
-		 */
+		String parent = driver.getWindowHandle();
+
+		driver.getWindowHandles().forEach(tab -> driver.switchTo().window(tab));
+		assertTrue(driver.getCurrentUrl().contains("demoqa")).isDisplayed());
+		System.out.println(driver.getCurrentUrl());
+		System.out.println(driver.getTitle());
+		
+		
+		for (String child : driver.getWindowHandles()) {
+			driver.switchTo().window(child);
+		}
+
+		Thread.sleep(3000);
+		System.out.println(driver.getCurrentUrl());
+		System.out.println(driver.getTitle());
+
+		driver.switchTo().window(parent);
+		driver.close();
 
 	}
 }
