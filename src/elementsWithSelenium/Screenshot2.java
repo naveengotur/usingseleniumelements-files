@@ -31,7 +31,7 @@ public class Screenshot2 {
 		
 		File source = screenShot.getScreenshotAs(OutputType.FILE); 
 		
-		FileUtils.copyFile(source, new File("./screeshot/facebook.png"));
+		FileUtils.copyFile(source, new File("./screenshot/facebook.png"));
 		
 		System.out.println("Screenshot Taken");
 		

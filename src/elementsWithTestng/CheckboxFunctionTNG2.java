@@ -43,33 +43,10 @@ public class CheckboxFunctionTNG2 extends ElementBaseClassTNG {
 		
 		js.executeScript("window.scrollBy(400,0)", "");
 		
+		driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
 		
-		
-		/*
-
-		driver.findElement(By.xpath("//span[.='Check Box']")).click();
-
-		System.out.println(driver.getTitle());
-
-		System.out.println(driver.getCurrentUrl());
-
-		Thread.sleep(2000);
-
-//		
-
-		
-
-		Thread.sleep(2000);
-
-		js.executeScript("window.scrollBy(0,400)", "");
 		driver.findElement(By.xpath("//span[@class='rct-checkbox']")).click();
-
-		WebElement result2 = driver.findElement(By.id("result"));
-
-		String displayresult2 = result.getText();
-
-		System.out.println(displayresult2);
-		*/
+		
 
 	}
 }

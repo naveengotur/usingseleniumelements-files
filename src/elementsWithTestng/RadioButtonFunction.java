@@ -7,19 +7,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class RadioButtonFunction extends BaseClassTNG {
+public class RadioButtonFunction extends ElementBaseClassTNG {
 
 	@Test
 	public void radioButton() throws InterruptedException {
 
 		JavascriptExecutor js1 = (JavascriptExecutor) driver;
 		js1.executeScript("window.scrollBy(0,250)", "");
-
-		driver.findElement(By.xpath("(//div[.='Elements'])[2]")).click();
-
-		System.out.println(driver.getTitle());
-
-		System.out.println(driver.getCurrentUrl());
 
 		driver.findElement(By.xpath("//span[.='Radio Button']")).click();
 

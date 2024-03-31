@@ -22,27 +22,22 @@ import org.testng.annotations.Test;
 
 public class Screenshot {
 
-	public static void main(String[] args) throws IOException { 
-			
-				//Specify the path to your chrome driver
-			    WebDriver driver;
-			    
-				// Instantiate chrome driver object
-				 driver = new ChromeDriver();
-				 
-				// Navigate to the testim website
-				driver.get("https://www.testim.io/");
-				
-				//Use TakesScreenshot method to capture screenshot
-				TakesScreenshot screenshot = (TakesScreenshot)driver;
-				
-				//Saving the screenshot in desired location
-				File source = screenshot.getScreenshotAs(OutputType.FILE);
-				
-				//Path to the location to save screenshot
-				FileUtils.copyFile(source, new File("./SeleniumScreenshots/Screen.png"));
-				System.out.println("Screenshot is captured");
-				
-				driver.quit();
-		}
+	public static void main(String[] args) throws IOException {
+
+		WebDriver driver;
+
+		driver = new FirefoxDriver();
+
+		driver.get("https://testng.org/testng-eclipse-update-site");
+
+		TakesScreenshot screenshot = (TakesScreenshot) driver;
+
+		File source = screenshot.getScreenshotAs(OutputType.FILE);
+
+		FileUtils.copyFile(source, new File("./screenshot/new.png"));
+
+		System.out.println("Screenshot is captured");
+
+		driver.quit();
+	}
 }

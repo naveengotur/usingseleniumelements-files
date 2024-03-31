@@ -40,14 +40,17 @@ public class SwitchTestNG3 {
 		Thread.sleep(3000);
 		System.out.println(driver.getCurrentUrl());
 		System.out.println(driver.getTitle());
+		
 		String parent = driver.getWindowHandle();
 
 		driver.findElement(By.xpath("//a[.='The Kitchen - Table']")).click();
 
 		driver.getWindowHandles().forEach(tab -> driver.switchTo().window(tab));
+		
 		assertTrue(driver.findElement(By.id("fruits-vegetables")).isDisplayed());
+		
 		System.out.println(driver.getCurrentUrl());
-		System.out.println(driver.getTitle());
+		
 		
 		
 		for (String child : driver.getWindowHandles()) {

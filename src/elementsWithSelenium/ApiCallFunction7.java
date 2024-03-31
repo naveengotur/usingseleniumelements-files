@@ -8,34 +8,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class ApiCallFunction7 extends MainClass {
+public class ApiCallFunction7 extends ElementBaseClassMain {
 	public void apiCallFunction7()
 	{
 
-		WebDriver driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		driver = new FirefoxDriver();
+		js.executeScript("window.scrollBy(0,250)", "");
 
-		driver.manage().window().maximize();
-
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-		driver.get("https://demoqa.com/");
-
-		System.out.println(driver.getTitle());
-
-		System.out.println(driver.getCurrentUrl());
-		JavascriptExecutor js2 = (JavascriptExecutor) driver;
-		js2.executeScript("window.scrollBy(0,250)", "");
-
-		driver.findElement(By.xpath("(//div[.='Elements'])[2]")).click();
-
-		System.out.println(driver.getTitle());
-
-		System.out.println(driver.getCurrentUrl());
-		driver.findElement(By.xpath("//span[.='Buttons']")).click();
-
-		System.out.println(driver.getTitle());
+		driver.findElement(By.xpath("//span[.='Links']")).click();
 
 		System.out.println(driver.getCurrentUrl());
 

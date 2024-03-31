@@ -39,6 +39,7 @@ public class SwitchTab3 {
 		Thread.sleep(3000);
 		System.out.println(driver.getCurrentUrl());
 		System.out.println(driver.getTitle());
+		
 		String parent = driver.getWindowHandle();
 
 		driver.findElement(By.xpath("//a[.='The Kitchen - Table']")).click();

@@ -23,7 +23,7 @@ public class ElementBaseClassTNG {
 
 		driver.manage().window().maximize();
 
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		driver.get("https://demoqa.com/");
 
@@ -38,6 +38,8 @@ public class ElementBaseClassTNG {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		js.executeScript("window.scrollBy(0,250)", "");
+		
+		Thread.sleep(2000);
 
 		driver.findElement(By.xpath("(//div[.='Elements'])[2]")).click();
 
@@ -51,7 +53,7 @@ public class ElementBaseClassTNG {
 
 	public void tearDown() {
 
-		driver.close();
+		driver.quit();
 	}
 
 }

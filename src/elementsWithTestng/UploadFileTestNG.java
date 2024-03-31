@@ -11,37 +11,15 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class UploadFileTestNG {
-	WebDriver driver;
-	@BeforeMethod
-	public void setUp()
-	{
-		
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	}
+public class UploadFileTestNG  extends ElementBaseClassTNG
+{
 	
 	@Test
 	public void uploadFile() throws InterruptedException
 	{
-		driver.get("https://demoqa.com/");
 
-		System.out.println(driver.getTitle());
-
-		System.out.println(driver.getCurrentUrl());
-		JavascriptExecutor js2 = (JavascriptExecutor) driver;
-		js2.executeScript("window.scrollBy(0,250)", "");
-		
-
-		driver.findElement(By.xpath("(//div[.='Elements'])[2]")).click();
-
-		System.out.println(driver.getTitle());
-
-		System.out.println(driver.getCurrentUrl());
-
-		JavascriptExecutor js3 = (JavascriptExecutor) driver;
-		js3.executeScript("window.scrollBy(0,250)", "");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,250)", "");
 
 		driver.findElement(By.xpath("//span[.='Upload and Download']")).click();
 
@@ -62,12 +40,12 @@ public class UploadFileTestNG {
 		String datadisplay2 = filename.getText();
 
 		System.out.println(datadisplay2);
-
-		JavascriptExecutor js4 = (JavascriptExecutor) driver;
-		js4.executeScript("window.scrollBy(0,250)", "");
+		
+		js.executeScript("window.scrollBy(0,200)", "");
 
 		String projectpath = System.getProperty("user.dir");
-		driver.findElement(By.xpath("//input[@type='file']")).sendKeys(projectpath+"\\screeshot\\facebook.png");
+		
+		driver.findElement(By.xpath("//input[@type='file']")).sendKeys(projectpath+"\\screenshot\\facebook.png");
 
 		Thread.sleep(3000);
 
@@ -78,9 +56,4 @@ public class UploadFileTestNG {
 		
 	}
 	
-	@AfterMethod
-	public void tearDown()
-	{
-		driver.close();
-	}
 }

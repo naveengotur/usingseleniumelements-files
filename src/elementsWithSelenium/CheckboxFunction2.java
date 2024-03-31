@@ -1,41 +1,51 @@
 package elementsWithSelenium;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
 
-public class CheckboxFunction2 
-{
+import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 
-	public static void main(String []args)
-	{
-		
-		WebDriver driver;
+public class CheckboxFunction2 extends ElementBaseClassMain {
+	@Test
 
-		driver = new FirefoxDriver();
+	public void checkbox2() throws InterruptedException {
 
-		driver.manage().window().maximize();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		driver.get("https://www.ironspider.ca/forms/checkradio.htm");
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//span[.='Check Box']")).click();
 
 		System.out.println(driver.getTitle());
 
 		System.out.println(driver.getCurrentUrl());
 
-		driver.findElement(By.xpath("//input[@value='red']")).click();
-		
-		driver.findElement(By.xpath("//input[@value='yellow']")).click();
-		
-		driver.findElement(By.xpath("//input[@value='green']")).click();
-		
-		driver.findElement(By.xpath("//input[@value='orange']")).click();
-		
-		driver.findElement(By.xpath("//input[@value='blue']")).click();
-		
-		driver.findElement(By.xpath("//input[@value='purple']")).click();
-		
-		driver.close();
-		
-		
+		js.executeScript("window.scrollBy(0,100)", "");
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//span[@class='rct-checkbox']")).click();
+
+		WebElement result = driver.findElement(By.id("result"));
+
+		String displayresult = result.getText();
+
+		System.out.println(displayresult);
+
+		driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
+
+		js.executeScript("window.scrollBy(0,400)", "");
+
+		Thread.sleep(2000);
+
+		js.executeScript("window.scrollBy(400,0)", "");
+
+		driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
+
+		driver.findElement(By.xpath("//span[@class='rct-checkbox']")).click();
+
 	}
 }
